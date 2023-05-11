@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <h1>Honolulu, Hawaii</h1>
+        <h1></h1>
         <form>
             <label for="city-name"></label>
             <input type="text" id="city-name" placeholder="Enter city name">
@@ -21,11 +21,19 @@
         </form>
     </header>
     <main class="hidden">
-        <!-- <div>image</div> -->
-        <div id="temp">80&deg</div>
-        <div id="conditions">Partly Cloudy</div>
-        <div id="humidity">69%</div>
-        <div id="wind">NE <br> 4.3mph</div>
+        <div class="temp">
+            <div>Temp</div>
+            <div id="temp"></div>
+        </div>
+        <div id="conditions"></div>
+        <div class="humidity">
+            <div id="humidity"></div>
+            <div>Humidity</div>
+        </div>
+        <div class="wind">
+            <div id="wind" style="white-space: pre;";></div>
+            <div>Wind</div>
+        </div>
     </main>
 </body>
 </html>

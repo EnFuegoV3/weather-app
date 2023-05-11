@@ -2,6 +2,10 @@ const main = document.querySelector('main');
 const header = document.querySelector('h1');
 const cityName = document.querySelector('#city-name');
 const submit = document.querySelector('#submit');
+const temp = document.querySelector('#temp');
+const conditions = document.querySelector('#conditions');
+const humidity = document.querySelector('#humidity');
+const wind = document.querySelector('#wind');
 
 async function getWeather(location) {
     try {
@@ -11,8 +15,14 @@ async function getWeather(location) {
     if(newData.error) {
         alert(newData.error.message);
     } else {
+        main.classList.remove('hidden');
         header.textContent = newData.location.name + ", " + newData.location.region;
-       
+        temp.textContent = newData.current.temp_f + "\u00B0";
+        conditions.textContent = newData.current.condition.text;
+        conditions.style.backgroundImage = `url(${newData.current.condition.icon})`;
+        humidity.textContent = newData.current.humidity + "%";
+        wind.textContent = newData.current.wind_dir + "\r\n"; 
+        wind.textContent += newData.current.wind_mph + "mph";
     }
 
     } catch (error) {console.log(error)}

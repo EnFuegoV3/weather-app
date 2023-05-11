@@ -43,7 +43,7 @@ h1 {
 
 
 main {
-    border: 1px solid red;
+    
     margin-top: 5em;
     display: grid;
     grid-template-columns: repeat(2, 10em);
@@ -56,7 +56,7 @@ main {
 }
 
 main > div {
-    border: 1px solid red;
+    
     border-radius: 8px;
     text-align: center;
     display: flex;
@@ -69,20 +69,51 @@ main > div {
     
 }
 
-#temp {
-    font-size: 5rem;
+.temp {
+    display: flex;
+    flex-direction: column;
     /* backdrop-filter: invert(10%); */
     
 }
 
+#temp {
+    font-size: 3rem;
+}
+
 #conditions {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 600;
+    font-style: italic;
+    color: darkslateblue;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: white;
+}
+
+.humidity {
+    
+    display: flex;
+    flex-direction: column;
+    
 }
 
 #humidity {
-    font-size: 5rem;
+    font-size: 3rem;
+}
+
+span {
+    
+    font-size: 1rem;
+}
+
+.wind {
+    display: flex;
+    flex-direction: column;
 }
 
 #wind {
     font-size: 2rem;
+}
+
+.hidden {
+    display: none;
 }
