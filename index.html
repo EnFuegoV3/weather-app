@@ -7,18 +7,25 @@
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1></h1>
+        <h1>Honolulu, Hawaii</h1>
         <form>
-            <label for="city-name">Current weather for:</label>
+            <label for="city-name"></label>
             <input type="text" id="city-name" placeholder="Enter city name">
-            <button id="submit">Submit</button>
+            <button id="submit">Get Weather</button>
         </form>
     </header>
     <main class="hidden">
-
+        <!-- <div>image</div> -->
+        <div id="temp">80&deg</div>
+        <div id="conditions">Partly Cloudy</div>
+        <div id="humidity">69%</div>
+        <div id="wind">NE <br> 4.3mph</div>
     </main>
 </body>
 </html>
