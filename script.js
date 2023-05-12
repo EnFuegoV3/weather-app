@@ -6,6 +6,7 @@ const temp = document.querySelector('#temp');
 const conditions = document.querySelector('#conditions');
 const humidity = document.querySelector('#humidity');
 const wind = document.querySelector('#wind');
+const tempChange = document.querySelector("#toggle");
 
 async function getWeather(location) {
     try {
@@ -18,14 +19,21 @@ async function getWeather(location) {
         main.classList.remove('hidden');
         header.textContent = newData.location.name + ", " + newData.location.region;
         temp.textContent = newData.current.temp_f + "\u00B0";
-        conditions.textContent = newData.current.condition.text;
+        conditions.textContent = "\r\n" + newData.current.condition.text;
         conditions.style.backgroundImage = `url(${newData.current.condition.icon})`;
         humidity.textContent = newData.current.humidity + "%";
         wind.textContent = newData.current.wind_dir + "\r\n"; 
         wind.textContent += newData.current.wind_mph + "mph";
+        tempChange.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                temp.textContent = newData.current.temp_c + "\u00B0";
+            } else {
+                temp.textContent = newData.current.temp_f + "\u00B0";
+            }
+        });
     }
 
-    } catch (error) {console.log(error)}
+    } catch (error) {alert(error)}
 };
 
 // async function surfReport(location) {
@@ -45,16 +53,13 @@ async function getWeather(location) {
 // };
 
 
-
-
-
 submit.addEventListener('click', (e) => {
     e.preventDefault();
     getWeather(cityName.value);
     // surfReport(cityName.value)
 });
 
-// getWeather("honolulu")
+
 
 
 
