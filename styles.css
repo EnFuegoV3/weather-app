@@ -125,7 +125,7 @@ main > div {
 }
 
 #conditions {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 600;
     font-style: italic;
     color: rgb(183, 180, 204);
@@ -162,3 +162,4 @@ span {
 /* .hidden {
     display: none;
 } */
+

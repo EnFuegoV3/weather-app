@@ -7,8 +7,10 @@ const conditions = document.querySelector('#conditions');
 const humidity = document.querySelector('#humidity');
 const wind = document.querySelector('#wind');
 const tempChange = document.querySelector("#toggle");
+const spinner = document.querySelector('lds-ellipsis');
 
 async function getWeather(location) {
+    
     try {
     let response = await fetch(`https://api.weatherapi.com/v1/current.json?key=92f555c514464e9ba1b20137230805&q=${location}`, {mode: "cors"});
     let newData = await response.json();
@@ -16,6 +18,7 @@ async function getWeather(location) {
     if(newData.error) {
         alert(newData.error.message);
     } else {
+        
         main.classList.remove('hidden');
         header.textContent = newData.location.name + ", " + newData.location.region;
         temp.textContent = newData.current.temp_f + "\u00B0";
